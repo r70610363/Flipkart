@@ -9,11 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@cashfreepayments/cashfree-js": "^1.0.5",
+    "@google/genai": "^1.30.0",
+    "cashfree-pg": "^5.1.0",
+    "lucide-react": "^0.554.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^7.9.6",
-    "@google/genai": "^1.30.0",
-    "lucide-react": "^0.554.0"
+    "react-router-dom": "^7.9.6"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
