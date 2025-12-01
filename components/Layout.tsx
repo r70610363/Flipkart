@@ -262,7 +262,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             
             <div className="hidden md:flex w-[40%] bg-[#2874f0] p-8 flex-col text-white">
               <h2 className="text-2xl font-semibold mb-4">
-                  {authMode === 'login' ? 'Login' : 'Looks like you're new!'}
+                  {authMode === 'login' ? 'Login' : "Looks like you're new!"}
               </h2>
               <p className="text-base">
                   {authMode === 'login' 
