@@ -58,12 +58,16 @@ export const verifyOtp = async (mobileNumber: string, code: string): Promise<{ s
                 body: JSON.stringify({ mobile: mobileNumber, code })
             });
 
+            // Regardless of response.ok, we will get a json response from backend
             const data = await response.json();
-            if (response.ok && data.success) {
-                return { success: true, message: "Verification Successful" };
-            }
+            
+            // If backend processed it, return its response directly
+            // This handles both success and failure cases from the server
+            return { success: data.success, message: data.message };
+
         } catch (error) {
-            // Ignore backend error and check local mock
+            // Backend not reachable, fall through to mock verification
+            console.log("Backend not reachable. Switching to Simulation Mode for verify-otp.");
         }
     }
 
