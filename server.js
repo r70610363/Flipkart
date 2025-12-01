@@ -1,15 +1,10 @@
 
-import express from 'express';
-import cors from 'cors';
-import { Cashfree } from 'cashfree-pg';
-import path from 'path';
-import { fileURLToPath } from 'url';
+const express = require('express');
+const cors = require('cors');
+const { Cashfree } = require('cashfree-pg');
+const path = require('path');
 
 const app = express();
-
-// Get directory name in ES module scope
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 app.use(cors());
 app.use(express.json());
@@ -60,7 +55,6 @@ app.post('/api/payment/initiate', async (req, res) => {
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
-
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
