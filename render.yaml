@@ -1,0 +1,13 @@
+
+services:
+  - type: web
+    name: flipkart-clone
+    env: node
+    plan: free
+    buildCommand: "npm install && npm run build"
+    startCommand: "node server.js"
+    envVars:
+      - key: CASHFREE_API_ID
+        value: TEST10115041a54777d8533e49339314051101
+      - key: CASHFREE_API_SECRET
+        value: cf_client_secret_b4b9b94205a2fe21295b9a896677f3f1e5a59c5d
