@@ -34,7 +34,7 @@ app.post('/api/payment/initiate', async (req, res) => {
                 "customer_name": name
             },
             "order_meta": {
-                "return_url": `https://4-28b7a.web.app/order-success/{order_id}`
+                "return_url": `https://flipkart-1dqd.onrender.com/order-success/{order_id}`
             }
         };
 
