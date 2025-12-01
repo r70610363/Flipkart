@@ -7,7 +7,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyD22fI7B44b9uW9Y7-TTzOMNvegRuvvysk",
   authDomain: "flipkart-84869764-28b7a.firebaseapp.com",
   projectId: "flipkart-84869764-28b7a",
-  storageBucket: "flipkart-84869764-28b7a.appspot.com",
+  storageBucket: "flipkart-84869764-28b7a.firebasestorage.app",
   messagingSenderId: "961874933748",
   appId: "1:961874933748:web:18674259850e868618eba1"
 };
