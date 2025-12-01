@@ -11,7 +11,7 @@ app.use(express.json());
 // Initialize Cashfree
 Cashfree.XClientId = process.env.CASHFREE_CLIENT_ID || "114321026a5f66183345bd82ee50123411";
 Cashfree.XClientSecret = process.env.CASHFREE_CLIENT_SECRET || "cfsk_ma_prod_4fed9c52cb45cf5972e9a3b11e7bacde_d081651e";
-Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION; // Or Cashfree.Environment.SANDBOX
+Cashfree.XEnvironment = "production"; // Or "sandbox"
 
 app.post('/api/payment/initiate', async (req, res) => {
     const { amount, orderId, email, name } = req.body;
