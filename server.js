@@ -2,12 +2,23 @@
 import express from 'express';
 import cors from 'cors';
 import { Cashfree } from 'cashfree-pg';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const app = express();
+
+// Get directory name in ES module scope
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(cors());
 app.use(express.json());
 
+// --- Static File Serving ---
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// --- API Routes ---
 // Initialize Cashfree
 Cashfree.XClientId = process.env.CASHFREE_CLIENT_ID || "114321026a5f66183345bd82ee50123411";
 Cashfree.XClientSecret = process.env.CASHFREE_CLIENT_SECRET || "cfsk_ma_prod_4fed9c52cb45cf5972e9a3b11e7bacde_d081651e";
@@ -43,6 +54,13 @@ app.post('/api/payment/initiate', async (req, res) => {
         res.status(500).json({ success: false, message: "Payment initiation failed" });
     }
 });
+
+// --- Fallback Route ---
+// Handles any requests that don't match the ones above
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
