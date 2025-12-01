@@ -27,9 +27,8 @@ export const sendOtp = async (mobileNumber: string): Promise<{ success: boolean;
 
     // 2. Fallback: Simulation Mode (Frontend Only)
     // As requested: Logic to "send email" is simulated here. 
-    // We use '1234' for testing purposes.
     return new Promise((resolve) => {
-        const otp = '1234'; // Fixed for testing as requested
+        const otp = Math.floor(1000 + Math.random() * 9000).toString();
         
         console.log(`[Mock Backend] Triggering Email/SMS to ${mobileNumber} with code: ${otp}`);
         
@@ -73,8 +72,7 @@ export const verifyOtp = async (mobileNumber: string, code: string): Promise<{ s
         setTimeout(() => {
             const session = mockOtpStore[mobileNumber];
             
-            // Allow 1234 as universal bypass or check against stored session
-            if (code === '1234' || (session && session.code === code)) {
+            if (session && session.code === code) {
                 resolve({ success: true, message: "Verification Successful" });
             } else {
                 resolve({ success: false, message: "Invalid OTP" });
