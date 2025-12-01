@@ -1,16 +1,15 @@
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
-// TODO: Add your own Firebase configuration from your project settings
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-  authDomain: "your-project-id.firebaseapp.com",
-  projectId: "your-project-id",
-  storageBucket: "your-project-id.appspot.com",
-  messagingSenderId: "your-sender-id",
-  appId: "your-app-id"
+  apiKey: "AIzaSyD22fI7B44b9uW9Y7-TTzOMNvegRuvvysk",
+  authDomain: "flipkart-84869764-28b7a.firebaseapp.com",
+  projectId: "flipkart-84869764-28b7a",
+  storageBucket: "flipkart-84869764-28b7a.appspot.com",
+  messagingSenderId: "961874933748",
+  appId: "1:961874933748:web:18674259850e868618eba1"
 };
 
 // Initialize Firebase
