@@ -1,7 +1,8 @@
 
-const express = require('express');
-const cors = require('cors');
-const { Cashfree } = require('cashfree-pg');
+import express from 'express';
+import cors from 'cors';
+import { Cashfree } from 'cashfree-pg';
+
 const app = express();
 
 app.use(cors());
